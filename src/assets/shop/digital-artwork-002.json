@@ -1,0 +1,10 @@
+{
+  "id": "digital-artwork-002",
+  "name": "Digital Art Collection",
+  "price": 25.00,
+  "description": "Collection de 5 œuvres d'art numériques haute résolution. Téléchargement immédiat après achat.",
+  "image": "/src/assets/gallery/design-3.svg",
+  "category": "Digital",
+  "inStock": true,
+  "tags": ["digital", "collection", "download", "HD"]
+}

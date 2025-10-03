@@ -1,0 +1,10 @@
+{
+  "id": "custom-commission-003",
+  "name": "Commission Personnalisée",
+  "price": 150.00,
+  "description": "Commande d'une œuvre personnalisée selon vos spécifications. Incluez vos idées et références lors de la commande.",
+  "image": "/src/assets/gallery/painting-2.svg",
+  "category": "Commission",
+  "inStock": true,
+  "tags": ["custom", "personalized", "original", "unique"]
+}

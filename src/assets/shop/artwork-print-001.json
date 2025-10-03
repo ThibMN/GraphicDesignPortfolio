@@ -1,0 +1,10 @@
+{
+  "id": "artwork-print-001",
+  "name": "Abstract Canvas Print",
+  "price": 45.00,
+  "description": "Une impression haute qualité sur toile de mon œuvre abstraite originale. Parfait pour décorer votre salon ou bureau.",
+  "image": "/src/assets/gallery/artwork-1.svg",
+  "category": "Prints",
+  "inStock": true,
+  "tags": ["abstract", "canvas", "colorful", "modern"]
+}

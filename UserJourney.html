@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Journey Map</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .persona-selector {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .persona-btn {
+            padding: 10px 24px;
+            margin: 0 10px;
+            border: 2px solid #ddd;
+            background: white;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        .persona-btn.active {
+            background: #4F46E5;
+            color: white;
+            border-color: #4F46E5;
+        }
+        .journey-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        .journey-table th {
+            padding: 20px 10px;
+            text-align: left;
+            font-weight: 600;
+            color: #555;
+            border-bottom: 2px solid #e5e5e5;
+        }
+        .journey-table th:first-child {
+            width: 180px;
+            background: #fafafa;
+        }
+        .journey-table td {
+            padding: 20px 10px;
+            border-bottom: 1px solid #f0f0f0;
+            vertical-align: top;
+        }
+        .journey-table td:first-child {
+            background: #fafafa;
+            font-weight: 600;
+            color: #666;
+            font-size: 14px;
+        }
+        .phase-header {
+            text-align: center;
+            padding: 16px !important;
+            color: white;
+            font-size: 18px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .phase-1 { background: #4F46E5; }
+        .phase-2 { background: #F59E0B; }
+        .phase-3 { background: #EC4899; }
+        .phase-4 { background: #10B981; }
+        .phase-5 { background: #8B5CF6; }
+        .phase-6 { background: #EF4444; }
+        .sticky-note {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 16px;
+            border-radius: 8px;
+            margin: 4px 0;
+            font-size: 14px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+        }
+        .touchpoint {
+            background: #f3f4f6;
+            padding: 10px 14px;
+            border-radius: 6px;
+            margin: 4px 0;
+            font-size: 13px;
+            color: #374151;
+            border-left: 3px solid #9CA3AF;
+        }
+        .thought {
+            background: #D1FAE5;
+            padding: 10px 14px;
+            border-radius: 6px;
+            margin: 4px 0;
+            font-size: 13px;
+            color: #065F46;
+            border-left: 3px solid #10B981;
+        }
+        .thought.negative {
+            background: #FEE2E2;
+            color: #991B1B;
+            border-left-color: #EF4444;
+        }
+        .feeling {
+            text-align: center;
+            font-size: 48px;
+            padding: 10px 0;
+        }
+        .owner {
+            text-align: center;
+            padding: 10px;
+        }
+        .owner-icon {
+            width: 60px;
+            height: 60px;
+            background: #E5E7EB;
+            border-radius: 50%;
+            margin: 0 auto 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+        }
+        .owner-name {
+            font-size: 12px;
+            color: #6B7280;
+            font-weight: 600;
+        }
+        .opportunity {
+            background: #FEF3C7;
+            padding: 10px 14px;
+            border-radius: 6px;
+            margin: 4px 0;
+            font-size: 13px;
+            color: #92400E;
+            border-left: 3px solid #F59E0B;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>User Journey Map</h1>
+        <div class="persona-selector">
+            <button class="persona-btn active" onclick="showPersona('karim')">👔 Karim - Entrepreneur</button>
+            <button class="persona-btn" onclick="showPersona('sophie')">🎨 Sophie - Directrice Artistique</button>
+        </div>
+
+        <!-- Journey pour Karim -->
+        <div id="journey-karim">
+            <table class="journey-table">
+                <thead>
+                    <tr>
+                        <th>Phase du parcours</th>
+                        <th class="phase-header phase-1" colspan="1">Découverte</th>
+                        <th class="phase-header phase-2" colspan="2">Exploration</th>
+                        <th class="phase-header phase-3" colspan="2">Conviction</th>
+                        <th class="phase-header phase-4">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Actions<br><small>Que fait l'utilisateur ?</small></td>
+                        <td><div class="sticky-note">Recherche sur LinkedIn/Google</div></td>
+                        <td><div class="sticky-note">Arrive sur la page d'accueil</div></td>
+                        <td><div class="sticky-note">Explore le portfolio</div></td>
+                        <td><div class="sticky-note">Lit la description du projet</div></td>
+                        <td><div class="sticky-note">Consulte "À propos"</div></td>
+                        <td><div class="sticky-note">Clique sur Contact</div></td>
+                    </tr>
+                    <tr>
+                        <td>Touchpoint<br><small>Point de contact</small></td>
+                        <td><div class="touchpoint">LinkedIn</div><div class="touchpoint">Google</div></td>
+                        <td><div class="touchpoint">Page d'accueil</div><div class="touchpoint">Accroche</div></td>
+                        <td><div class="touchpoint">Grille projets</div><div class="touchpoint">Vignettes</div></td>
+                        <td><div class="touchpoint">Page projet</div><div class="touchpoint">Détails</div></td>
+                        <td><div class="touchpoint">Page À propos</div><div class="touchpoint">Profil</div></td>
+                        <td><div class="touchpoint">Formulaire</div><div class="touchpoint">Email</div></td>
+                    </tr>
+                    <tr>
+                        <td>Pensées<br><small>Que pense l'utilisateur ?</small></td>
+                        <td><div class="thought">Ce portfolio a l'air pro</div></td>
+                        <td><div class="thought">L'accroche est claire</div><div class="thought">Les projets sont visibles</div></td>
+                        <td><div class="thought">Ce projet correspond à mon besoin</div></td>
+                        <td><div class="thought">Il/elle a les compétences</div><div class="thought">Les résultats sont concrets</div></td>
+                        <td><div class="thought">Le profil est rassurant</div></td>
+                        <td><div class="thought">Je vais demander un devis</div></td>
+                    </tr>
+                    <tr>
+                        <td>Émotions<br><small>Que ressent l'utilisateur ?</small></td>
+                        <td><div class="feeling">🤔</div></td>
+                        <td><div class="feeling">😊</div></td>
+                        <td><div class="feeling">🤨</div></td>
+                        <td><div class="feeling">😃</div></td>
+                        <td><div class="feeling">😌</div></td>
+                        <td><div class="feeling">🥳</div></td>
+                    </tr>
+                    <tr>
+                        <td>Responsable<br><small>Qui gère cette étape ?</small></td>
+                        <td><div class="owner"><div class="owner-icon">👤</div><div class="owner-name">Utilisateur</div></div></td>
+                        <td><div class="owner"><div class="owner-icon">💻</div><div class="owner-name">Site web</div></div></td>
+                        <td><div class="owner"><div class="owner-icon">💻</div><div class="owner-name">Site web</div></div></td>
+                        <td><div class="owner"><div class="owner-icon">💻</div><div class="owner-name">Site web</div></div></td>
+                        <td><div class="owner"><div class="owner-icon">💻</div><div class="owner-name">Site web</div></div></td>
+                        <td><div class="owner"><div class="owner-icon">👤</div><div class="owner-name">Utilisateur</div></div></td>
+                    </tr>
+                    <tr>
+                        <td>Opportunités<br><small>Comment améliorer ?</small></td>
+                        <td><div class="opportunity">Optimiser SEO</div><div class="opportunity">Profil LinkedIn actif</div></td>
+                        <td><div class="opportunity">Accroche orientée résultats business</div></td>
+                        <td><div class="opportunity">Filtres par secteur</div></td>
+                        <td><div class="opportunity">Mettre en avant le ROI</div><div class="opportunity">Témoignages clients</div></td>
+                        <td><div class="opportunity">Ajouter expérience chiffrée</div></td>
+                        <td><div class="opportunity">Formulaire simple</div><div class="opportunity">Réponse rapide</div></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Journey pour Sophie -->
+        <div id="journey-sophie" style="display:none;">
+            <table class="journey-table">
+                <thead>
+                    <tr>
+                        <th>Phase du parcours</th>
+                        <th class="phase-header phase-1" colspan="1">Découverte</th>
+                        <th class="phase-header phase-2" colspan="2">Exploration</th>
+                        <th class="phase-header phase-3" colspan="2">Conviction</th>
+                        <th class="phase-header phase-4">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Actions<br><small>Que fait l'utilisateur ?</small></td>
+                        <td><div class="sticky-note">Référence ou recherche rapide</div></td>
+                        <td><div class="sticky-note">Scanne la page d'accueil</div></td>
+                        <td><div class="sticky-note">Évalue les projets créatifs</div></td>
+                        <td><div class="sticky-note">Analyse le process créatif</div></td>
+                        <td><div class="sticky-note">Vérifie fiabilité</div></td>
+                        <td><div class="sticky-note">Contacte ou recommande</div></td>
+                    </tr>
+                    <tr>
+                        <td>Touchpoint<br><small>Point de contact</small></td>
+                        <td><div class="touchpoint">Réseau pro</div><div class="touchpoint">Google</div></td>
+                        <td><div class="touchpoint">Navigation</div><div class="touchpoint">Menu</div></td>
+                        <td><div class="touchpoint">Portfolio</div><div class="touchpoint">Projets variés</div></td>
+                        <td><div class="touchpoint">Case studies</div><div class="touchpoint">Visuels</div></td>
+                        <td><div class="touchpoint">À propos</div><div class="touchpoint">Contact</div></td>
+                        <td><div class="touchpoint">Email/Tel</div></td>
+                    </tr>
+                    <tr>
+                        <td>Pensées<br><small>Que pense l'utilisateur ?</small></td>
+                        <td><div class="thought">Voyons ce portfolio</div></td>
+                        <td><div class="thought negative">J'espère que c'est pas compliqué</div><div class="thought">Navigation claire ✓</div></td>
+                        <td><div class="thought">Niveau créatif élevé</div><div class="thought">Polyvalence intéressante</div></td>
+                        <td><div class="thought">Le process est pro</div></td>
+                        <td><div class="thought">Profil fiable</div><div class="thought">Peut correspondre au poste</div></td>
+                        <td><div class="thought">Je vais le/la contacter</div></td>
+                    </tr>
+                    <tr>
+                        <td>Émotions<br><small>Que ressent l'utilisateur ?</small></td>
+                        <td><div class="feeling">😐</div></td>
+                        <td><div class="feeling">😊</div></td>
+                        <td><div class="feeling">😍</div></td>
+                        <td><div class="feeling">🤩</div></td>
+                        <td><div class="feeling">😌</div></td>
+                        <td><div class="feeling">🥳</div></td>
+                    </tr>
+                    <tr>
+                        <td>Responsable<br><small>Qui gère cette étape ?</small></td>
+                        <td><div class="owner"><div class="owner-icon">👤</div><div class="owner-name">Utilisateur</div></div></td>
+                        <td><div class="owner"><div class="owner-icon">💻</div><div class="owner-name">Site web</div></div></td>
+                        <td><div class="owner"><div class="owner-icon">💻</div><div class="owner-name">Site web</div></div></td>
+                        <td><div class="owner"><div class="owner-icon">💻</div><div class="owner-name">Site web</div></div></td>
+                        <td><div class="owner"><div class="owner-icon">💻</div><div class="owner-name">Site web</div></div></td>
+                        <td><div class="owner"><div class="owner-icon">👤</div><div class="owner-name">Utilisateur</div></div></td>
+                    </tr>
+                    <tr>
+                        <td>Opportunités<br><small>Comment améliorer ?</small></td>
+                        <td><div class="opportunity">Réseau professionnel actif</div></td>
+                        <td><div class="opportunity">Navigation ultra-simple</div><div class="opportunity">Pas de menu compliqué</div></td>
+                        <td><div class="opportunity">Showcase créativité</div><div class="opportunity">Projets variés visibles</div></td>
+                        <td><div class="opportunity">Expliquer démarche créative</div></td>
+                        <td><div class="opportunity">Témoignages pros</div><div class="opportunity">Réactivité affichée</div></td>
+                        <td><div class="opportunity">Contact facile</div><div class="opportunity">Réponse <24h</div></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        function showPersona(persona) {
+            // Cacher tous les journeys
+            document.getElementById('journey-karim').style.display = 'none';
+            document.getElementById('journey-sophie').style.display = 'none';
+            
+            // Retirer la classe active de tous les boutons
+            const buttons = document.querySelectorAll('.persona-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            
+            // Afficher le journey sélectionné
+            if (persona === 'karim') {
+                document.getElementById('journey-karim').style.display = 'block';
+                buttons[0].classList.add('active');
+            } else {
+                document.getElementById('journey-sophie').style.display = 'block';
+                buttons[1].classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
