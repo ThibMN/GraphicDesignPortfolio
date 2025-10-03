@@ -35,7 +35,7 @@ npm run build
 
 📄 **[Voir les deux Personas imaginés](./UserJourney.html)** - Personas détaillés
 
-📄 **[Voir la User Story complète](./UserJourney.html)** - Personas, parcours utilisateur et objectifs du projet
+📄 **[Voir la User Journey complète](https://thibmn.github.io/GraphicDesignPortfolio/UserJourney.html)** - Personas, parcours utilisateur et objectifs du projet
 
 ### Objectif principal
 Présenter mon travail et mon identité graphique de manière claire, esthétique et professionnelle afin de convaincre et convertir les visiteurs en contactshe idée**
