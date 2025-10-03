@@ -164,7 +164,7 @@ Portfolio/
 3. **Engagement** → Pages de détail riches avec descriptions
 4. **Contact** → Email direct depuis la page À propos
 
-**[🎭 User Story Complète](./UserJourney.html)** - Personas détaillés et parcours utilisateur
+**[🎭 User Journey Complète](https://thibmn.github.io/GraphicDesignPortfolio/UserJourney.html)** - Personas détaillés et parcours utilisateur
 
 ## 🚀 Déploiement
 
