@@ -31,9 +31,9 @@ npm run build
 
 ## 📋 User Story et Conception
 
-📄 **[Voir le design Figma réalisé](./PortfolioGraphiste.png)** - Personas détaillés
+📄 **[Voir le design Figma réalisé](./PortfolioGraphiste.png)** - Pour comprendre les idées du design principal
 
-📄 **[Voir les deux Personas imaginés](./UserJourney.html)** - Personas détaillés
+📄 **[Voir les deux Personas imaginés](./PERSONAS.md)** - Personas détaillés
 
 📄 **[Voir la User Journey complète](https://thibmn.github.io/GraphicDesignPortfolio/UserJourney.html)** - Personas, parcours utilisateur et objectifs du projet
 
